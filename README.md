@@ -18,23 +18,20 @@ django-docker
 1. * create an Nginx configuration file and a docker file
 1. * Create a docker-compose file
 
+**All files for this document are provided above**
 **All files should be placed in the root of your project folder. Check the screenshot below as an example.**
 
 ![image](https://github.com/Valery-Hyppolite/django-with-docker-nginx-gunicorn/assets/83102811/5b97d037-d26a-43a9-ba8e-2e9734b78532)
 
 
 ## Create a script
-In your root folder, create a script with the name: **entrypoint.sh**, place the text below in it, then save. This script will run migration, collect your static files, and let Gunicorn start your application. 
+In your root folder, create a script with the name: **entrypoint.sh**, copy the textt in the entrypoint.sh file provided into yours, then save. This script will run migration, collect your static files, and let Gunicorn start your application. 
 
 ![image](https://github.com/Valery-Hyppolite/django-with-docker-nginx-gunicorn/assets/83102811/fe3507be-4eb5-4e43-b437-1c92d40ab7fa)
 
-#!/bin/sh
-python manage.py collectstatic --noinput
-python manage.py migrate
-gunicorn  productInventory.wsgi:application --bin "0.0.0.0:8000"
-
 ## Create a docker file
-This docker file will create an **app** directory. In that **app** directory, we'll create an env, copy your requirement.txt file, entrypoint.sh file, and your Django project.
+* Create file named Dockerfile and place the configuration text provided in it, then save. 
+This docker file will create an **app** directory. In that **app** directory, it will create an env environment, copy your requirement.txt file, entrypoint.sh file, and your Django project.
 
 ![image](https://github.com/Valery-Hyppolite/django-with-docker-nginx-gunicorn/assets/83102811/a1ef6ab9-e33f-4721-8ab1-79d3390ce2b1)
 
@@ -42,10 +39,10 @@ You can also create a user for this docker file by uncommenting out the "**usera
 
 
 ## Create Nginx config file and docker file
-* create a folder in the root directory of your project name it nginx.
+* Create a folder in the root directory of your project name it nginx.
 * Inside that folder, create a file named: **default.conf** and a docker file named **Dockerfile**
-* In the config file, paste this text in it.
-* Replace anything marked in red rectangles.
+* In the config file, paste the configuration provieded in it.
+* Replace anything marked in red rectangles, then save the file.
 
 
 ![image](https://github.com/Valery-Hyppolite/django-with-docker-nginx-gunicorn/assets/83102811/8ce8e6cd-e172-4490-a888-0d90d230521a)
