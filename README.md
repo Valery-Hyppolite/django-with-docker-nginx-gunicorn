@@ -18,8 +18,8 @@ django-docker
 1. * create an Nginx configuration file and a docker file
 1. * Create a docker-compose file
 
-**All files for this document are provided above**
-**All files should be placed in the root of your project folder. Check the screenshot below as an example.**
+* **All files for this document are provided above.**
+* **All files should be placed in the root of your project folder. Check the screenshot below as an example.**
 
 ![image](https://github.com/Valery-Hyppolite/django-with-docker-nginx-gunicorn/assets/83102811/5b97d037-d26a-43a9-ba8e-2e9734b78532)
 
